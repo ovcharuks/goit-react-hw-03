@@ -64,5 +64,29 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+    border-style: solid;
+        border-color: darkgray;
+        padding: 5px;
+        max-height: min-content;
+        align-self: center;
   }
 }
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  justify-content: start;
+}
+p{
+  margin: 0;
+ text-align: start ;
+}
+
+label{
+  display: flex;
+flex-direction: column;
+text-align: start;
+}
+
