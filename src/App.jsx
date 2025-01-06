@@ -5,8 +5,7 @@ import ContactForm from "./components/contactForm";
 import SearchBox from "./components/SearchBox";
 import { useId } from "react";
 
-import { nanoid } from "nanoid";
-import { FaUserAlt } from "react-icons/fa";
+
 
 function App() {
   const [contacts, setContacts] = useState([
