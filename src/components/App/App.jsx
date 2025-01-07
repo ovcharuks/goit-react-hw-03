@@ -22,6 +22,14 @@ function App() {
     });
   };
 
+const deleteContact = (idToDelete) => {
+  console.log(idToDelete);
+  setContacts((prev)=> {
+    console.log(prev);
+    return prev.filter((contact) => contact.id !== idToDelete);
+  })
+}
+
   const visibleTasks = contacts.filter((contact) =>(
     contact.name.toLowerCase().includes(filter.toLowerCase()))
   );
@@ -32,7 +40,8 @@ function App() {
 
       <ContactForm onAdd={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList contacts={visibleTasks} />
+      <ContactList deleteContact={deleteContact} contacts={visibleTasks} />
+      
     </div>
   );
 }
