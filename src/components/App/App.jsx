@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import ContactList from "./components/ContactList";
-import ContactForm from "./components/ContactForm";
-import SearchBox from "./components/SearchBox";
+import ContactList from "../ContactList/ContactList";
+import ContactForm from "../ContactForm/ContactForm";
+import SearchBox from "../SearchBox/SearchBox";
 import { useId } from "react";
 
 
