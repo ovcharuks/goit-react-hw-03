@@ -18,13 +18,13 @@ function App() {
 
   const addContact = (newContact) => {
     setContacts((prev) => {
-      return [{ ...prev, newContact }];
+      return [ ...prev, newContact ];
     });
   };
 
-  // const visibleTasks = contacts.filter((contact) =>(
-  //   contact.name.toLowerCase().includes(filter.toLowerCase()))
-  // );
+  const visibleTasks = contacts.filter((contact) =>(
+    contact.name.toLowerCase().includes(filter.toLowerCase()))
+  );
 
   return (
     <div>
@@ -32,7 +32,7 @@ function App() {
 
       <ContactForm onAdd={addContact} />
       <SearchBox value={filter} onFilter={setFilter} />
-      <ContactList contacts={contacts} />
+      <ContactList contacts={visibleTasks} />
     </div>
   );
 }
