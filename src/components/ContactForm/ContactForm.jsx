@@ -14,10 +14,12 @@ const ContactForm = ({onAdd}) => {
 
   const registerSchema = Yup.object().shape({
     name: Yup.string()
-      .min(3, "мінімум 3 символи")
-      .max(50, "максимум 20 символів")
-      .required("обов'язково до заповнення"),
-    number: Yup.string().min(7).max(10).matches().required(),
+      .min(3, "Мінімум 3 символи")
+      .max(50, "Максимум 20 символів")
+      .required("Обов'язково до заповнення"),
+    number: Yup.string()
+    .matches(/^\d{3}-\d{2}-\d{2}$/, "Обов'язковий формат xxx-xx-xx")
+    .required("Обов'язково до заповнення"),
   });
 
   return (
@@ -25,7 +27,7 @@ const ContactForm = ({onAdd}) => {
       validationSchema={registerSchema}
       onSubmit={handleSubmit}
       initialValues={{
-        id: nanoid(8),
+        // id: nanoid(),
         name: "",
         number: "",
       }}
